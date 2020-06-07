@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     #管理静态文件的框架
     'django.contrib.staticfiles',
     #添加djapp
-    'djapp.apps.Djappconfig'
+    'djapp.apps.DjappConfig',
 ]
 
 MIDDLEWARE = [
