@@ -31,12 +31,20 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #管理员站点
     'django.contrib.admin',
+    #认证授权系统
     'django.contrib.auth',
+    #内容类型框架
     'django.contrib.contenttypes',
+    #会话框架
     'django.contrib.sessions',
+    #消息框架
     'django.contrib.messages',
+    #管理静态文件的框架
     'django.contrib.staticfiles',
+    #添加djapp
+    'djapp.apps.Djappconfig'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +62,8 @@ ROOT_URLCONF = 'djtd.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        #模板文件templates文件地址配置
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,8 +84,16 @@ WSGI_APPLICATION = 'djtd.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #数据库使用mysql
+        'ENGINE' : 'django.db.backends.mysql',
+        #demoTw2
+        'NAME' : 'djtd',
+        'USER' : 'root',
+        'PASSWORD' : 'admin',
+        'HOST' : '127.0.0.1',
+        'PORT' : '3306'
     }
 }
 
@@ -102,10 +119,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+#语言
+LANGUAGE_CODE = 'zh-Hans'
+#时区
+TIME_ZONE = 'asia/ShangHai'
 
 USE_I18N = True
 
