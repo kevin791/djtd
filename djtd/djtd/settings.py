@@ -63,7 +63,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         #模板文件templates文件地址配置
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR,'djapp/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
