@@ -1,0 +1,7 @@
+github desktop安装登录成功后有报错：fatal: unable to access 'https://github.com/lin54241930/TcServer.git/': schannel: failed to receive handshake, SSL/TLS connection failed
+解决办法：在命令行中执行以下两条命令
+    git config --global http.sslBackend "openssl"
+    git config --global http.sslCAInfo [path to .pem file]
+
+
+前端
